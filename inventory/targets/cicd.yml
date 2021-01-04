@@ -11,7 +11,7 @@ parameters:
       - ghprb:1.42.1
       - kubernetes:1.27.6
       - workflow-aggregator:2.6
-      - git:4.4.5
+      - git:4.5.1
       - configuration-as-code:1.46
 
   kapitan:
