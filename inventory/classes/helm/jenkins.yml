@@ -1,0 +1,8 @@
+parameters:
+  kapitan:
+    compile:
+      - output_path: values/
+        input_type: jinja2
+        input_paths:
+          - templates/helm/jenkins_values.yml
+        
