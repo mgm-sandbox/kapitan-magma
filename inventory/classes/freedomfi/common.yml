@@ -1,0 +1,8 @@
+parameters:
+ kapitan:
+    secrets:
+      gpg:
+        recipients:
+          - name: infra@freedomfi.com
+            fingerprint: C3B2389C58F590F6AAB33137EAB3CD12B62F3302
+
