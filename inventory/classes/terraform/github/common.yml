@@ -1,0 +1,9 @@
+parameters:
+  terraform:
+    github_state: ?{gpg:freedomfi/terraform/state}
+  kapitan:
+    compile:
+      - output_path: .
+        input_type: jinja2
+        input_paths:
+          - templates/tf/terraform.tfstate

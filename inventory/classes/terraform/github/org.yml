@@ -1,0 +1,9 @@
+classes:
+  - terraform.github.common
+parameters:
+  kapitan:
+    compile: 
+      - output_path: .
+        input_type: jinja2
+        input_paths:
+          - templates/tf/github.tf
