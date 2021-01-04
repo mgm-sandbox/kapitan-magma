@@ -1,4 +1,42 @@
 classes:
   - 'freedomfi.common'
+  - 'terraform.github.org'
+  - 'github.org.mirror'
 parameters:
-  
+  kapitan:
+    vars:
+      target: github_org
+  github:  
+    account: mgm-bot
+    token: ?{gpg:freedomfi/github/mgm-bot/personal-token}
+    organization:
+      mgm-sandbox:  
+        repos:
+          - name: magma  
+            description: Platform for building access networks and modular network services
+            visibility: public
+            has_wiki: true
+            has_issues: true
+            source: https://github.com/magma/magma
+          - name: magma-website
+            description: Repository for the Magma website
+            source: https://github.com/magma/magma-website
+            has_wiki: false
+            has_issues: true
+          - name: mma-android
+            description: mma-android
+            has_wiki: false
+            has_issues: true
+            source: https://github.com/magma/mma-android
+          - name: mma-ios
+            description: mma-ios
+            has_wiki: false
+            has_issues: true
+            source: https://github.com/magma/mma-ios
+          - name: community
+            description: community
+            has_wiki: false
+            has_issues: true
+            source: https://github.com/magma/community
+          - name: kapitan-magma
+            description: infra prototype
