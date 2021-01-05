@@ -8,6 +8,7 @@ parameters:
       password: ?{gpg:freedomfi/jenkins/admin/password}
 
     installPlugins:
+      - github-pullrequest:0.2.8
       - ghprb:1.42.1
       - kubernetes:1.27.6
       - workflow-aggregator:2.6
