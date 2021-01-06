@@ -18,7 +18,17 @@ resource "github_repository" "github_{{ org_name }}_{{ repo.name }}" {
     prevent_destroy = {{ repo.prevent_destroy | default("true", true) | string | lower}}
   }
 }
-
-  {% endfor %} 
-{% endfor %}
-
+    {% if repo.secrets is defined %}
+      {% for secret, plaintext_value in repo.secrets.items() %}
+resource "github_actions_secret" "github_{{ org_name }}_{{ repo.name }}_{{ secret | lower }}" {
+  repository       = "{{ repo.name }}"
+  secret_name      = "{{ secret }}"
+  plaintext_value  = "{{ plaintext_value }}" 
+  depends_on = [
+    github_repository.github_{{ org_name }}_{{ repo.name }},
+  ]
+}
+      {% endfor %} {# for secret, plaintext_value in repo.secrets.items() #}
+    {% endif %} {# if repo.secrets #}
+  {% endfor %} {# for repo in org #}
+{% endfor %} {# for organization in p.github.oganizaiton #} 
