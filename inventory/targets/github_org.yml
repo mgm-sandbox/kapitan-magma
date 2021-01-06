@@ -40,3 +40,5 @@ parameters:
             source: https://github.com/magma/community
           - name: kapitan-magma
             description: infra prototype
+          - name: magma-pr-merge
+            description: docker container for CI/CD
