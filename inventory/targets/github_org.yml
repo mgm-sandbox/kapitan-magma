@@ -42,3 +42,6 @@ parameters:
             description: infra prototype
           - name: magma-pr-merge
             description: docker container for CI/CD
+            secrets:
+              REGISTRY_USERNAME: ?{gpg:freedomfi/dockerhub/ci_user/username} 
+              REGISTRY_PASSWORD: ?{gpg:freedomfi/dockerhub/ci_user/password} 
